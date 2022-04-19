@@ -22,7 +22,7 @@
 </head>
 <body>
     <p>
-        <?php echo $paragraph; ?>
+        <?php echo str_replace(strtolower($badWord), "***", strtolower($paragraph)); ?>
     </p>
     <h3>
         La lunghezza del paragrafo è: <?php echo strlen($paragraph);  ?>
