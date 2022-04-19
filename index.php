@@ -9,7 +9,9 @@
         Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare.
     */
     $paragraph = "Nel pattinaggio artistico su ghiaccio, nome di alcuni esercizi facenti parte delle diciassette figure obbligatorie di scuola, che vengono eseguiti prima su uno e poi sull'altro piede, descrivendo un tracciato simile a due cerchi giustapposti.";
-    $badWord = $_GET["badWord"]
+    $badWord = $_GET["badWord"];
+    $censuredParagraph = str_replace(strtolower($badWord), "***", strtolower($paragraph));
+    
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +36,10 @@
         </div>
         <div class="w-50 p-3 bg-secondary text-white">
             <p class="my-4 fs-4">
-                <?php echo str_replace(strtolower($badWord), "***", strtolower($paragraph)); ?>
+                <?php echo $censuredParagraph; ?>
             </p>
             <h3 class="pt-5">
-                La nuova lunghezza del paragrafo è: <?php echo strlen(str_replace(strtolower($badWord), "***", strtolower($paragraph)));  ?>
+                La nuova lunghezza del paragrafo è: <?php echo strlen($censuredParagraph);  ?>
             </h3>
         </div>
     </header>
